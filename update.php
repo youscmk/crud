@@ -33,7 +33,7 @@ if(isset($_POST['update'])){
     $direccion_usuario=$_POST['direccion_usuario'];
 
     $sql = "UPDATE usuario SET id_usuario='$id', fecha='$fecha', latitude='$latitude', longitud='$longitud', e_Acumulada='$e_Acumulada', s_Acumulada='$s_Acumulada', aforo='$aforo', direccion_usuario='$direccion_usuario' WHERE id_usuario='$id'";
-    $actualizar = $mysqli->query($sql);
+    $actualizar = mysqli_query($mysqli , $sql);
     header("Location: index.php");
 
 
@@ -70,7 +70,7 @@ if(isset($_POST['update'])){
 
 <body>
     <div class="container mt-5">
-        <form action="update.php?id="<?php echo $_GET['id']; ?> method="POST">
+        <form action="update.php?id=<?php echo $fila['id_usuario'] ?>" method="POST">
         <input type="datetime" name="fecha" value="<?php echo $fila['id_usuario']; ?>">
             <input type="datetime" name="fecha" value="<?php echo $fila['fecha']; ?>">
             <input type="text" name="latitude" value="<?php echo $fila['latitude']; ?>">
