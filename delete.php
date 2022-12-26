@@ -2,7 +2,7 @@
     require("conexion.php");
     //DEBEN ESTAR ESCRITAS COMO EN EL FORMULARIO O HTML
 
-$id_usuario=$_GET['id'];
+$id_usuario=$_GET['id_usuario'];
     if (isset($_GET['eliminar'])) {
 
         $codELiminar = $_GET['eliminar'];
@@ -39,7 +39,7 @@ $id_usuario=$_GET['id'];
 
 
      <?php
-        $i = $_GET['id_usuario'];
+        $id_usuario = $_GET['id_usuario'];
         $sql = "SELECT * FROM usuario";
         $listar = $mysqli->query($sql);
 
@@ -49,7 +49,7 @@ $id_usuario=$_GET['id'];
 
          <tr>
              <td> <?php echo $fila['id_usuario']; ?> </td>
-             <td> <?php echo $fila['fecha_actual']; ?> </td>
+             <td> <?php echo $fila['fecha']; ?> </td>
              <td> <?php echo $fila['latitude']; ?> </td>
              <td> <?php echo $fila['longitud']; ?> </td>
              <td> <?php echo $fila['entrada_Acumulada']; ?> </td>

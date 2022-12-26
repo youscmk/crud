@@ -30,8 +30,20 @@
 
               <div class="col-md-3">
                   <h1>Ingrese datos:</h1>
+                  <?php
+                            $sql = "SELECT * FROM usuario";
+                            $listar = $mysqli->query($sql);
+
+
+                            foreach ($listar as $fila) {
+                            ?>
+                            <?php
+                            }
+                            ?>
+
                   <form action="insert.php" method="POST">
-                      <input type="number" class="form-control mb-3" value="<?php echo $id ?>" maxlength="20" name="id_usuario" id="id_usuario" placeholder="ID">
+                    
+                      <input type="number" class="form-control mb-3" readonly="readonly" value="<?php echo $fila['id_usuario']+1; ?>" maxlength="20" name="id_usuario" id="id_usuario" placeholder="ID">
 
                       <?php
                         date_default_timezone_set("America/Santiago");
@@ -100,10 +112,10 @@
                       <input type="number" class="form-control mb-3" placeholder="Aforo" name="aforo" id="aforo">
 
                       <input type="text" class="form-control mb-3" placeholder="Dirección" name="direccion_usuario" id="direccion_usuario">
-                      <input type="submit"  class="btn btn-primary" id="btnEnviar" name="btnEnviar">
+                      <input type="submit" class="btn btn-primary" id="btnEnviar" name="btnEnviar">
 
 
-                     
+
 
 
                   </form>
@@ -139,15 +151,15 @@
 
                               <tr>
                                   <th> <?php echo $fila['id_usuario']; ?> </th>
-                                  <th> <?php echo $fila['fecha_actual']; ?> </th>
+                                  <th> <?php echo $fila['fecha']; ?> </th>
                                   <th> <?php echo $fila['latitude']; ?> </th>
                                   <th> <?php echo $fila['longitud']; ?> </th>
-                                  <th> <?php echo $fila['entrada_Acumulada']; ?> </th>
-                                  <th> <?php echo $fila['salida_Acumulada']; ?> </th>
+                                  <th> <?php echo $fila['e_Acumulada']; ?> </th>
+                                  <th> <?php echo $fila['s_Acumulada']; ?> </th>
                                   <th> <?php echo $fila['aforo']; ?> </th>
-                                  <th> <?php echo $fila['direccion']; ?> </th>
+                                  <th> <?php echo $fila['direccion_usuario']; ?> </th>
 
-                                  <th><a href="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" class="btn btn-info" name,id="btnEditar"> Editar</a></th>
+                                  <th><a href="update.php?id=<?php echo $fila['id_usuario'] ?>" class="btn btn-info" name="btnEditar" id="btnEditar"> Editar</a></th>
                                   <th> <a class="btn btn-danger" href="delete.php?id=<?php echo $fila['id_usuario'] ?>&eliminar=<?php echo $fila['id_usuario']; ?>">Eliminar</a> </th>
 
 
