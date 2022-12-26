@@ -1,14 +1,11 @@
-  
-  <?php
-  require("conexion.php");
-
-  $ingreso="";
+<?php
+require("conexion.php");
 
 
-  
-  if (isset($_POST['btnEnviar'])) {
 
-    $id = $_POST['id_usuario'];
+if (isset($_POST['btnEditar'])) {
+
+    $id_usuario = $_POST['id_usuario'];
     $fecha = $_POST['fecha']; //fecha y hora deben salir automaticas
     $lati = $_POST['latitude']; //separar en longitud y latitud y que sea en varchar(10)
     $long = $_POST['longitud']; //separar en longitud y latitud y que sea en varchar(10)
@@ -20,15 +17,7 @@
 
 
 
-    $sql = "INSERT INTO usuario VALUES (NULL, '$fecha', '$lati', '$long', '$eA', '$sA', $a, '$d')";
-
-    $agregar = $mysqli->query($sql);
-    $ingreso="si";
-    header("location: index.php?v=si");
-    die();
-  }
-
-
-
-
-
+    $sql = "UPDATE usuario SET fecha='$fecha', latitude='$lati', longitud='$long', e_Acumulada='$eA', s_Acumalada='$sA', aforo='$a', direccion_usuario='$d' WHERE id_usuario='$id'";
+    $actualizar = $mysqli->query($sql);
+} 
+?>

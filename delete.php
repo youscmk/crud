@@ -2,13 +2,14 @@
     require("conexion.php");
     //DEBEN ESTAR ESCRITAS COMO EN EL FORMULARIO O HTML
 
-
+$id_usuario=$_GET['id'];
     if (isset($_GET['eliminar'])) {
 
         $codELiminar = $_GET['eliminar'];
         $sql = "DELETE FROM usuario WHERE id_usuario = $codELiminar";
 
         $eliminar = $mysqli->query($sql);
+        header("Location: index.php");
     }
 
 
@@ -19,7 +20,7 @@
 
 
 
- <table border="1" style="display: inline-block;">
+ <!-- <table border="1" style="display: inline-block;">
      <tr>
          <th>Id</th>
          <th>Fecha</th>
@@ -64,6 +65,6 @@
          </tr>
      <?php
         }
-        ?>
- </table>
+        ?> 
+ </table> -->
  //DEBEN ESTAR ESCRITAS COMO EN LA BASE DE DATOS
