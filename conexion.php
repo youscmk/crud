@@ -1,5 +1,5 @@
 <?php
-//Conexion clase MYSQLI 
+//Conexion clase MYSQLI  
 // $objetoconexion = new MYSQLI(servidor, usuario, password, basedatos);
 $mysqli = new MYSQLI('localhost', 'root', '', 'masgps');
 if($mysqli->connect_errno > 0 ){
