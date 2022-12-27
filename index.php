@@ -11,9 +11,23 @@
       <link href="style.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <style>
-    
+          #miTablaPersonalizada th {
+              width: 100px;
 
-   
+              border: 1px solid;
+          }
+
+          table {
+              table-layout: fixed;
+              border: 1px solid;
+          }
+
+          body {
+              background-image: radial-gradient(circle at 0% 0%, #ffd470 0, #ffd567 6.25%, #f6d660 12.5%, #e4d75a 18.75%, #d1d654 25%, #bcd551 31.25%, #a4d34f 37.5%, #89d04e 43.75%, #6acc50 50%, #40c854 56.25%, #00c45c 62.5%, #00c065 68.75%, #00bc71 75%, #00b97e 81.25%, #00b58d 87.5%, #00b39c 93.75%, #00b0ad 100%);
+              width: 100%;
+              height: 920px;
+              background-repeat: no-repeat;
+          }
       </style>
   </head>
 
@@ -23,28 +37,28 @@
       <div class="container mt-5">
           <div class="row">
 
-              <div class="col-mt-3" style="text-align: center";>
+              <div class="col-mt-3" style="text-align: center" ;>
                   <h1>Ingrese datos:</h1>
                   <?php
-                            $sql = "SELECT * FROM usuario";
-                            $listar = $mysqli->query($sql);
+                    $sql = "SELECT * FROM usuario";
+                    $listar = $mysqli->query($sql);
 
 
-                            foreach ($listar as $fila) {
-                            ?>
-                            <?php
-                            }
-                            ?>
+                    foreach ($listar as $fila) {
+                    ?>
+                  <?php
+                    }
+                    ?>
 
                   <form action="insert.php" method="POST">
-                    
-                      <input type="number" class="form-control mb-3" readonly="readonly" value="<?php echo $fila['id_usuario']+1; ?>" maxlength="20" name="id_usuario" id="id_usuario" placeholder="ID">
+
+                      <input type="number" class="form-control mb-3" readonly="readonly" value="<?php echo $fila['id_usuario'] + 1; ?>" maxlength="20" name="id_usuario" id="id_usuario" placeholder="ID">
 
                       <?php
                         date_default_timezone_set("America/Santiago");
                         $fecha_actual = date("Y-m-d H:i:s");
                         ?>
-                      <input type="datetime" class="form-control mb-3" name="fecha" id="fecha" value="<?= $fecha_actual ?>">
+                      <input type="datetime" readonly="readonly" class="form-control mb-3" name="fecha" id="fecha" value="<?= $fecha_actual ?>">
 
 
                       <div id="map">
@@ -53,6 +67,7 @@
                           <input type="button" onclick="findMe()" value="Mostrar ubicación" name="coordenadas" id="coordenadas">
 
                       </div>
+                      <br>
 
 
 
@@ -71,7 +86,7 @@
 
 
 
-                                  output.innerHTML = "<p><label><b><u>Coordenadas:</u></b></label><br><b>Latitud:</b> " + "<input type='text' class='form-control mb-3'  style='width:232px;height:35px;' name='latitude' id='latitude' value=" + latitude + ">" + "   <b>Longitud: </b> " + "<input type='text' class='form-control mb-3' name='longitud' id='longitud'value=" + longitude + ">" + "</p>";
+                                  output.innerHTML = "<p><label><b><u>Coordenadas:</u></b></label><br><b>Latitud:</b> " + "<input type='text' class='form-control mb-3'  name='latitude' id='latitude' value=" + latitude + ">" + "   <b>Longitud: </b> " + "<input type='text' class='form-control mb-3' name='longitud' id='longitud'value=" + longitude + ">" + "</p>";
 
 
                                   // output.innerHTML = "<input><p>Latitud: " + latitude + "<br>Longitud: " + longitude + "</p>";
@@ -98,6 +113,9 @@
                           }
                       </script>
 
+
+
+
                       <input type="number" class="form-control mb-3" placeholder="Entrada acumulada" name="e_Acumulada" id="e_Acumulada">
 
 
@@ -115,28 +133,29 @@
 
                   </form>
               </div>
+              
               <div class="col-md-8">
-
+<br>
                   <table class="table">
                       <thead class="table-success table-striped">
-                          <tr>
-                              <th>Id</th>
-                              <th>Fecha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                          <tr id="miTablaPersonalizada">
+                              <th style="width: 50px">Id</th>
+                              <th style="width: 150px;">Fecha</th>
                               <th>Latitud</th>
                               <th>Longitud</th>
-                              <th>Entrada</th>
-                              <th>Salida</th>
+                              <th style="width: 130px;">E. acumulada</th>
+                              <th style="width: 150px;">S. acumulada</th>
                               <th>Aforo</th>
-                              <th>Dirección&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <th style="width: 200px;">Dirección</th>
                               <th></th>
                               <th></th>
-                             
+
 
                           </tr>
 
                       </thead>
 
-                      <tbody>
+                      <tbody class="table-warning">
                           <?php
                             $sql = "SELECT * FROM usuario";
                             $listar = $mysqli->query($sql);
@@ -146,7 +165,7 @@
                             ?>
 
                               <tr>
-                                
+
                                   <th> <?php echo $fila['id_usuario']; ?> </th>
                                   <th> <?php echo $fila['fecha']; ?> </th>
                                   <th> <?php echo $fila['latitude']; ?> </th>
