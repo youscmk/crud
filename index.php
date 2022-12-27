@@ -159,7 +159,7 @@
                                   <th> <?php echo $fila['aforo']; ?> </th>
                                   <th> <?php echo $fila['direccion_usuario']; ?> </th>
 
-                                  <th><a href="update.php?id=<?php echo $fila['id_usuario'] ?>" class="btn btn-info" name="btnEditar" id="btnEditar"> Editar</a></th>
+                                  <th><a href="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" class="btn btn-info" name="btnEditar" id="btnEditar"> Editar</a></th>
                                   <th> <a class="btn btn-danger" href="delete.php?id=<?php echo $fila['id_usuario'] ?>&eliminar=<?php echo $fila['id_usuario']; ?>">Eliminar</a> </th>
 
 
