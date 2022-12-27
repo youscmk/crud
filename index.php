@@ -8,17 +8,12 @@
       <title></title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="css/style.css" rel="stylesheet">
+      <link href="style.css" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
       <style>
-          label {
-              display: inline-block;
-              width: 100px;
-          }
+    
 
-          #map {
-              margin: 20px;
-          }
+   
       </style>
   </head>
 
@@ -28,7 +23,7 @@
       <div class="container mt-5">
           <div class="row">
 
-              <div class="col-md-3">
+              <div class="col-mt-3" style="text-align: center";>
                   <h1>Ingrese datos:</h1>
                   <?php
                             $sql = "SELECT * FROM usuario";
@@ -76,7 +71,7 @@
 
 
 
-                                  output.innerHTML = "<p><label><b>Coordenadas:</b></label><br>Latitud: " + "<input type='text' class='form-control mb-3'  style='width:232px;height:35px;' name='latitude' id='latitude' value=" + latitude + ">" + "   Longitud: " + "<input type='text' class='form-control mb-3' name='longitud' id='longitud'value=" + longitude + ">" + "</p>";
+                                  output.innerHTML = "<p><label><b><u>Coordenadas:</u></b></label><br><b>Latitud:</b> " + "<input type='text' class='form-control mb-3'  style='width:232px;height:35px;' name='latitude' id='latitude' value=" + latitude + ">" + "   <b>Longitud: </b> " + "<input type='text' class='form-control mb-3' name='longitud' id='longitud'value=" + longitude + ">" + "</p>";
 
 
                                   // output.innerHTML = "<input><p>Latitud: " + latitude + "<br>Longitud: " + longitude + "</p>";
@@ -126,15 +121,16 @@
                       <thead class="table-success table-striped">
                           <tr>
                               <th>Id</th>
-                              <th>Fecha</th>
+                              <th>Fecha&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                               <th>Latitud</th>
                               <th>Longitud</th>
-                              <th>E. acumulada</th>
-                              <th>S. acumulada</th>
+                              <th>Entrada</th>
+                              <th>Salida</th>
                               <th>Aforo</th>
-                              <th>Dirección</th>
+                              <th>Dirección&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                               <th></th>
                               <th></th>
+                             
 
                           </tr>
 
@@ -150,6 +146,7 @@
                             ?>
 
                               <tr>
+                                
                                   <th> <?php echo $fila['id_usuario']; ?> </th>
                                   <th> <?php echo $fila['fecha']; ?> </th>
                                   <th> <?php echo $fila['latitude']; ?> </th>

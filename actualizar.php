@@ -31,7 +31,7 @@ if (isset($_POST['AHHHH'])) {
     <style>
         label {
             display: inline-block;
-            width: 100px;
+            width: 100px
         }
 
         .butt {
@@ -43,28 +43,35 @@ if (isset($_POST['AHHHH'])) {
 
 <body>
     <div class="container mt-5">
-        <form action="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" method="POST">
-            <label><b>ID:</b></label>
-            <input type="number" name="id_usuario" readonly="readonly" value="<?php echo $fila['id_usuario']; ?>">
-            <label><b>FECHA:</b></label>
-            <input type="datetime" name="fecha" readonly="readonly" value="<?php echo $fila['fecha']; ?>"><br>
-            <label><b>LATITUDE:</b></label>
-            <input type="text" name="latitude" value="<?php echo $fila['latitude']; ?>">
-            <label><b>LONGITUD:</b></label>
-            <input type="text" name="longitud" value="<?php echo $fila['longitud']; ?>"><br>
-            <label><b>ENTRADA ACUMULADA:</b></label>
-            <input type="number" name="e_Acumulada" value="<?php echo $fila['e_Acumulada']; ?>">
-            <label><b>SALIDA ACUMULADA:</b></label>
-            <input type="number" name="s_Acumulada" value="<?php echo $fila['s_Acumulada']; ?>"><br>
-            <label><b>AFORO:</b></label>
-            <input type="number" name="aforo" value="<?php echo $fila['aforo']; ?>">
-            <label><b>DIRECCIÓN:</b></label>
-            <input type="text" name="direccion_usuario" value="<?php echo $fila['direccion_usuario']; ?>"><br>
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Datos:</h1>
 
-            <input type="submit" id="butt" name="AHHHH" class="btn btn-success" value="Actualizar">
 
-            <a href="index.php" id="butt"> Volver</a>
-        </form>
+                <form action="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" method="POST">
+                    <label><b>ID:</b></label>
+                    <input type="number" class="form-control mb" name="id_usuario" readonly="readonly" value="<?php echo $fila['id_usuario']; ?>">
+                    <label><b>FECHA:</b></label>
+                    <input type="datetime" class="form-control mb" name="fecha" readonly="readonly" value="<?php echo $fila['fecha']; ?>"><br>
+                    <label><b>LATITUDE:</b></label>
+                    <input type="text" class="form-control mb" name="latitude" value="<?php echo $fila['latitude']; ?>">
+                    <label><b>LONGITUD:</b></label>
+                    <input type="text" class="form-control mb" name="longitud" value="<?php echo $fila['longitud']; ?>"><br>
+                    <label><b>ENTRADA ACUMULADA:</b></label>
+                    <input type="number" class="form-control mb" name="e_Acumulada" value="<?php echo $fila['e_Acumulada']; ?>">
+                    <label><b>SALIDA ACUMULADA:</b></label>
+                    <input type="number" class="form-control mb"name="s_Acumulada" value="<?php echo $fila['s_Acumulada']; ?>"><br>
+                    <label><b>AFORO:</b></label>
+                    <input type="number" class="form-control mb" name="aforo" value="<?php echo $fila['aforo']; ?>">
+                    <label><b>DIRECCIÓN:</b></label>
+                    <input type="text" class="form-control mb" name="direccion_usuario" value="<?php echo $fila['direccion_usuario']; ?>"><br>
+
+                    <input type="submit" id="butt" name="AHHHH" class="btn btn-success" value="Actualizar">
+
+                    <a href="index.php" id="butt"> Volver</a>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 
