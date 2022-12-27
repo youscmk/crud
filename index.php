@@ -37,7 +37,7 @@
       <div class="container mt-5">
           <div class="row">
 
-              <div class="col-mt-3" style="text-align: center" ;>
+              <div class="col-md-3" style="text-align: center" ;>
                   <h1>Ingrese datos:</h1>
                   <?php
                     $sql = "SELECT * FROM usuario";
