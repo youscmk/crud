@@ -17,16 +17,27 @@
               border: 1px solid;
           }
 
+
+          th {
+              text-align: center;
+          }
+
           table {
               table-layout: fixed;
               border: 1px solid;
+
+
           }
 
           body {
-              background-image: radial-gradient(circle at 0% 0%, #ffd470 0, #ffd567 6.25%, #f6d660 12.5%, #e4d75a 18.75%, #d1d654 25%, #bcd551 31.25%, #a4d34f 37.5%, #89d04e 43.75%, #6acc50 50%, #40c854 56.25%, #00c45c 62.5%, #00c065 68.75%, #00bc71 75%, #00b97e 81.25%, #00b58d 87.5%, #00b39c 93.75%, #00b0ad 100%);
-              width: 100%;
-              height: 920px;
-              background-repeat: no-repeat;
+              background: rgb(3, 10, 70);
+              background: linear-gradient(90deg, rgba(3, 10, 70, 1) 8%, rgba(0, 212, 255, 1) 28%, rgba(3, 3, 64, 1) 63%, rgba(0, 212, 255, 1) 100%);
+              height: 100%;
+          }
+
+          #contenedor {
+              display: flex;
+              justify-content: center;
           }
       </style>
   </head>
@@ -34,11 +45,11 @@
   <body>
 
 
-      <div class="container mt-5">
+      <div class="container mt-5 ml-5">
           <div class="row">
 
               <div class="col-md-3" style="text-align: center" ;>
-                  <h1>Ingrese datos:</h1>
+                  <h1 style="color:aliceblue;"><b>Datos:</b></h1>
                   <?php
                     $sql = "SELECT * FROM usuario";
                     $listar = $mysqli->query($sql);
@@ -132,21 +143,21 @@
 
 
                   </form>
+
               </div>
-              
               <div class="col-md-8">
-<br>
+                  <br>
                   <table class="table">
-                      <thead class="table-success table-striped">
+                      <thead class="table-info table-striped">
                           <tr id="miTablaPersonalizada">
-                              <th style="width: 50px">Id</th>
-                              <th style="width: 150px;">Fecha</th>
-                              <th>Latitud</th>
-                              <th>Longitud</th>
-                              <th style="width: 130px;">E. acumulada</th>
-                              <th style="width: 150px;">S. acumulada</th>
-                              <th>Aforo</th>
-                              <th style="width: 200px;">Dirección</th>
+                              <th style="width: 45px;text-align: center;">Id</th>
+                              <th style="width: 115px;text-align: center;">Fecha</th>
+                              <th style="text-align: center;">Latitud</th>
+                              <th style="text-align: center;">Longitud</th>
+                              <th style="text-align: center;"> Entrada acumulada</th>
+                              <th style="text-align: center;">Salida acumulada</th>
+                              <th style="text-align: center;">Aforo</th>
+                              <th style="width: 180px;text-align: center;">Dirección</th>
                               <th></th>
                               <th></th>
 
@@ -155,7 +166,7 @@
 
                       </thead>
 
-                      <tbody class="table-warning">
+                      <tbody class="table-light">
                           <?php
                             $sql = "SELECT * FROM usuario";
                             $listar = $mysqli->query($sql);
@@ -167,7 +178,7 @@
                               <tr>
 
                                   <th> <?php echo $fila['id_usuario']; ?> </th>
-                                  <th> <?php echo $fila['fecha']; ?> </th>
+                                  <th style="text-align: center;"> <?php echo $fila['fecha']; ?> </th>
                                   <th> <?php echo $fila['latitude']; ?> </th>
                                   <th> <?php echo $fila['longitud']; ?> </th>
                                   <th> <?php echo $fila['e_Acumulada']; ?> </th>
@@ -175,7 +186,7 @@
                                   <th> <?php echo $fila['aforo']; ?> </th>
                                   <th> <?php echo $fila['direccion_usuario']; ?> </th>
 
-                                  <th><a href="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" class="btn btn-info" name="btnEditar" id="btnEditar"> Editar</a></th>
+                                  <th><a href="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" class="btn btn-success" name="btnEditar" id="btnEditar"> Editar</a></th>
                                   <th> <a class="btn btn-danger" href="delete.php?id=<?php echo $fila['id_usuario'] ?>&eliminar=<?php echo $fila['id_usuario']; ?>">Eliminar</a> </th>
 
 
@@ -195,6 +206,7 @@
           </div>
 
       </div>
+
 
 
   </body>

@@ -1,3 +1,4 @@
 body{
-    background-image: linear-gradient(to right, rgba(36, 137, 44, 0,61),white);
+    background: rgb(3, 10, 70);
+        background: linear-gradient(90deg, rgba(3, 10, 70, 1) 8%, rgba(0, 212, 255, 1) 28%, rgba(3, 3, 64, 1) 63%, rgba(0, 212, 255, 1) 100%);
 }
