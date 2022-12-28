@@ -35,20 +35,17 @@
               height: 100%;
           }
 
-          #contenedor {
-              display: flex;
-              justify-content: center;
-          }
+       
       </style>
   </head>
 
   <body>
 
 
-      <div class="container mt-5 ml-5">
+      <div class="container mt-5">
           <div class="row">
 
-              <div class="col-md-3" style="text-align: center" ;>
+              <div class="col-md-3" style="text-align: center;border: 1px double;color: white;" ;>
                   <h1 style="color:aliceblue;"><b>Datos:</b></h1>
                   <?php
                     $sql = "SELECT * FROM usuario";
@@ -63,7 +60,7 @@
 
                   <form action="insert.php" method="POST">
 
-                      <input type="number" class="form-control mb-3" readonly="readonly" value="<?php echo $fila['id_usuario'] + 1; ?>" maxlength="20" name="id_usuario" id="id_usuario" placeholder="ID">
+                      <input type="number" class="form-control mb-3" readonly="readonly" value="<?php echo  $fila['id_usuario'] + 1 ?>" maxlength="20" name="id_usuario" id="id_usuario" placeholder="ID">
 
                       <?php
                         date_default_timezone_set("America/Santiago");
@@ -97,7 +94,7 @@
 
 
 
-                                  output.innerHTML = "<p><label><b><u>Coordenadas:</u></b></label><br><b>Latitud:</b> " + "<input type='text' class='form-control mb-3'  name='latitude' id='latitude' value=" + latitude + ">" + "   <b>Longitud: </b> " + "<input type='text' class='form-control mb-3' name='longitud' id='longitud'value=" + longitude + ">" + "</p>";
+                                  output.innerHTML = "<p><label style='color:aliceblue;'><b><u>Coordenadas:</u></b></label><br><b style='color:aliceblue;'>Latitud:</b> " + "<input  type='text' readonly='readonly' class='form-control mb-3'  name='latitude' id='latitude' value=" + latitude + ">" + "   <b style='color:aliceblue;'>Longitud: </b> " + "<input type='text' readonly='readonly' class='form-control mb-3' name='longitud' id='longitud'value=" + longitude + ">" + "</p>";
 
 
                                   // output.innerHTML = "<input><p>Latitud: " + latitude + "<br>Longitud: " + longitude + "</p>";
@@ -185,6 +182,7 @@
                                   <th> <?php echo $fila['s_Acumulada']; ?> </th>
                                   <th> <?php echo $fila['aforo']; ?> </th>
                                   <th> <?php echo $fila['direccion_usuario']; ?> </th>
+                                  
 
                                   <th><a href="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" class="btn btn-success" name="btnEditar" id="btnEditar"> Editar</a></th>
                                   <th> <a class="btn btn-danger" href="delete.php?id=<?php echo $fila['id_usuario'] ?>&eliminar=<?php echo $fila['id_usuario']; ?>">Eliminar</a> </th>
@@ -194,7 +192,9 @@
                               </tr>
                           <?php
                             }
+                        
                             ?>
+                            
 
                       </tbody>
 
