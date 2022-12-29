@@ -1,11 +1,10 @@
-  
   <?php
   require("conexion.php");
 
-  $ingreso="";
+  $ingreso = "";
 
 
-  
+
   if (isset($_POST['btnEnviar'])) {
 
     $id = $_POST['id_usuario'];
@@ -17,18 +16,25 @@
     $a = $_POST['aforo'];
     $d = $_POST['direccion_usuario'];
 
+   
 
+    $sql = "INSERT INTO usuario VALUES (NULL, '$fecha', '$lati', '$long', '$eA', '$sA', $a, '$d')";}
+    
+   
+    if ($lati == "" || $lati == null || $lati == "null" || $lati === "") {    
+      echo '<script>alert("No se han verificado los datos anteriores") 
+    window.location = "index.php";
+    </script>
+    ';
 
+    } else {
 
-    $sql = "INSERT INTO usuario VALUES (NULL, '$fecha', '$lati', '$long', '$eA', '$sA', $a, '$d')";
+      $agregar = $mysqli->query($sql);
+      $ingreso = "si";
+      header("location: index.php?v=si");
+      die();
+    }
+  
+?>
 
-    $agregar = $mysqli->query($sql);
-    $ingreso="si";
-    header("location: index.php?v=si");
-    die();
-  }
-
-
-
-
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

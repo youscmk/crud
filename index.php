@@ -34,8 +34,6 @@
               background: linear-gradient(90deg, rgba(3, 10, 70, 1) 8%, rgba(0, 212, 255, 1) 28%, rgba(3, 3, 64, 1) 63%, rgba(0, 212, 255, 1) 100%);
               height: 100%;
           }
-
-       
       </style>
   </head>
 
@@ -58,21 +56,21 @@
                     }
                     ?>
 
-                  <form action="insert.php" method="POST">
+                  <form class="formulario" id="formulario" action="insert.php" method="POST">
 
-                      <input type="number" class="form-control mb-3" readonly="readonly" value="<?php echo  $fila['id_usuario'] + 1 ?>" maxlength="20" name="id_usuario" id="id_usuario" placeholder="ID">
+                      <input type="number" class="form-control mb-3" readonly="readonly" value="<?php echo  $fila['id_usuario'] + 1 ?>" maxlength="20" name="id_usuario" id="id_usuario" placeholder="ID" required>
 
                       <?php
                         date_default_timezone_set("America/Santiago");
                         $fecha_actual = date("Y-m-d H:i:s");
                         ?>
-                      <input type="datetime" readonly="readonly" class="form-control mb-3" name="fecha" id="fecha" value="<?= $fecha_actual ?>">
+                      <input type="datetime" readonly="readonly" class="form-control mb-3" name="fecha" id="fecha" value="<?= $fecha_actual ?>" required>
 
 
                       <div id="map">
 
 
-                          <input type="button" onclick="findMe()" value="Mostrar ubicación" name="coordenadas" id="coordenadas">
+                          <input type="button" required onclick="findMe()" value="Mostrar ubicación" name="coordenadas" id="coordenadas">
 
                       </div>
                       <br>
@@ -80,6 +78,7 @@
 
 
                       <script>
+                         
                           function findMe() {
                               var output = document.getElementById('map');
 
@@ -124,16 +123,17 @@
 
 
 
-                      <input type="number" class="form-control mb-3" placeholder="Entrada acumulada" name="e_Acumulada" id="e_Acumulada">
+                      <input type="number" class="form-control mb-3" placeholder="Entrada acumulada" name="e_Acumulada" id="e_Acumulada" required>
 
 
-                      <input type="number" class='form-control mb-3' placeholder="Salida acumulada" name="s_Acumulada" id="s_Acumulada">
+                      <input type="number" class='form-control mb-3' placeholder="Salida acumulada" name="s_Acumulada" id="s_Acumulada" required>
 
 
-                      <input type="number" class="form-control mb-3" placeholder="Aforo" name="aforo" id="aforo">
+                      <input type="number" class="form-control mb-3" placeholder="Aforo" name="aforo" id="aforo" required>
 
-                      <input type="text" class="form-control mb-3" placeholder="Dirección" name="direccion_usuario" id="direccion_usuario">
+                      <input type="text" class="form-control mb-3" placeholder="Dirección" name="direccion_usuario" id="direccion_usuario" required>
                       <input type="submit" class="btn btn-primary" id="btnEnviar" name="btnEnviar">
+                      <p class="warnings" id="warnings"> </p>
 
 
 
@@ -182,7 +182,7 @@
                                   <th> <?php echo $fila['s_Acumulada']; ?> </th>
                                   <th> <?php echo $fila['aforo']; ?> </th>
                                   <th> <?php echo $fila['direccion_usuario']; ?> </th>
-                                  
+
 
                                   <th><a href="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" class="btn btn-success" name="btnEditar" id="btnEditar"> Editar</a></th>
                                   <th> <a class="btn btn-danger" href="delete.php?id=<?php echo $fila['id_usuario'] ?>&eliminar=<?php echo $fila['id_usuario']; ?>">Eliminar</a> </th>
@@ -192,9 +192,9 @@
                               </tr>
                           <?php
                             }
-                        
+
                             ?>
-                            
+
 
                       </tbody>
 
