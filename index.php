@@ -78,7 +78,6 @@
 
 
                       <script>
-                         
                           function findMe() {
                               var output = document.getElementById('map');
 
@@ -131,6 +130,21 @@
 
                       <input type="number" class="form-control mb-3" placeholder="Aforo" name="aforo" id="aforo" required>
 
+                      
+                      <select style="width: 252px;"name="ciudad-names" id="ciudad-names">
+                          <option value="">Ingrese ciudad </option>
+                          <option value="dave">Iquique</option>
+                          <option value="pumpernickel">Puerto Montt</option>
+                          <option value="reeses">Punta Arenas</option>
+                          <option value="pumpernickel">Viña del Mar</option>
+                          <option value="pumpernickel">Valparaiso</option>
+                          <option value="pumpernickel">Puerto Varas</option>
+                          <option value="pumpernickel">Concepciòn</option>
+                          <option value="pumpernickel">Arica</option>
+                          <option value="pumpernickel">Puerto Montt</option>
+                      </select>
+
+                      <input type="text" class="form-control mb-3" placeholder="Comuna" name="direccion_usuario" id="direccion_usuario" required>
                       <input type="text" class="form-control mb-3" placeholder="Dirección" name="direccion_usuario" id="direccion_usuario" required>
                       <input type="submit" class="btn btn-primary" id="btnEnviar" name="btnEnviar">
                       <p class="warnings" id="warnings"> </p>
@@ -153,8 +167,8 @@
                               <th style="text-align: center;">Longitud</th>
                               <th style="text-align: center;"> Entrada acumulada</th>
                               <th style="text-align: center;">Salida acumulada</th>
-                              <th style="text-align: center;">Aforo</th>
-                              <th style="width: 180px;text-align: center;">Dirección</th>
+                              <th style="text-align: center;border-color: black;">Aforo</th>
+                              <th style="width: 180px;text-align: center;border-color: black;">Dirección</th>
                               <th></th>
                               <th></th>
 

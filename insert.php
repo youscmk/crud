@@ -22,7 +22,7 @@
     
    
     if ($lati == "" || $lati == null || $lati == "null" || $lati === "") {    
-      echo '<script>alert("No se han verificado los datos anteriores") 
+      echo '<script>alert("No se han verificado la ubicaciòn...") 
     window.location = "index.php";
     </script>
     ';
