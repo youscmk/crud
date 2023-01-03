@@ -34,6 +34,9 @@
               background: linear-gradient(90deg, rgba(3, 10, 70, 1) 8%, rgba(0, 212, 255, 1) 28%, rgba(3, 3, 64, 1) 63%, rgba(0, 212, 255, 1) 100%);
               height: 100%;
           }
+          #id_usuario, #fecha{
+            font-weight: bold;
+          }
       </style>
   </head>
 
@@ -130,8 +133,8 @@
 
                       <input type="number" class="form-control mb-3" placeholder="Aforo" name="aforo" id="aforo" required>
 
-                      
-                      <select style="width: 252px;"name="ciudad-names" id="ciudad-names">
+
+                      <!--  <select style="width: 252px;"name="ciudad-names" id="ciudad-names">
                           <option value="">Ingrese ciudad </option>
                           <option value="dave">Iquique</option>
                           <option value="pumpernickel">Puerto Montt</option>
@@ -144,7 +147,7 @@
                           <option value="pumpernickel">Puerto Montt</option>
                       </select>
 
-                      <input type="text" class="form-control mb-3" placeholder="Comuna" name="direccion_usuario" id="direccion_usuario" required>
+                      <input type="text" class="form-control mb-3" placeholder="Comuna" name="direccion_usuario" id="direccion_usuario" required>-->
                       <input type="text" class="form-control mb-3" placeholder="Dirección" name="direccion_usuario" id="direccion_usuario" required>
                       <input type="submit" class="btn btn-primary" id="btnEnviar" name="btnEnviar">
                       <p class="warnings" id="warnings"> </p>
@@ -169,8 +172,8 @@
                               <th style="text-align: center;">Salida acumulada</th>
                               <th style="text-align: center;border-color: black;">Aforo</th>
                               <th style="width: 180px;text-align: center;border-color: black;">Dirección</th>
-                              <th></th>
-                              <th></th>
+                              <th><img src="iconos/editar.png" style="width:33px;height: 33px;" alt=""></th>
+                              <th><img src="iconos/eliminar.png" style="width:33px;height: 33px;" alt=""></th>
 
 
                           </tr>

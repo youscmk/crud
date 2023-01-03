@@ -75,9 +75,13 @@ if (isset($_POST['AHHHH'])) {
             background-repeat: repeat;
 
         }
-        #map{
+
+        #map {
             border: 2px double;
             color: red;
+        }
+        #id_usuario, #fecha{
+            font-weight: bold;
         }
     </style>
     <title>Actualizar</title>
@@ -90,9 +94,9 @@ if (isset($_POST['AHHHH'])) {
         <form class="form" action="actualizar.php?id=<?php echo $fila['id_usuario'] ?>" method="POST">
             <h1 style="text-align: center;color: black;">Modificar datos:</h1>
             <label style="color: black;"><b>ID:</b></label>
-            <input type="number" class="form-control mb" name="id_usuario" readonly="readonly" value="<?php echo $fila['id_usuario']; ?>">
+            <input type="number" class="form-control mb" name="id_usuario" id="id_usuario" readonly="readonly" value="<?php echo $fila['id_usuario']; ?>">
             <label style="color: black;"><b>FECHA:</b></label>
-            <input type="datetime" class="form-control mb" name="fecha" readonly="readonly" value="<?php echo $fila['fecha']; ?>">
+            <input type="datetime" class="form-control mb" name="fecha" id="fecha" readonly="readonly" value="<?php echo $fila['fecha']; ?>">
             <label style="color: black;"><b>LATITUDE:</b></label>
             <input type="text" class="form-control mb" name="latitude" value="<?php echo $fila['latitude']; ?>">
             <label style="color: black;"><b>LONGITUD:</b></label>
